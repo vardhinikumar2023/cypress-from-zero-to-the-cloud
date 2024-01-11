@@ -188,22 +188,7 @@ cy.contains('a','Privacy Policy')
     .should('be.visible')
 })
 
-it.only('displays and hides the success and error messages using .invoke', () => {
-  cy.get('.success')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-    .and('contain', 'Message successfully sent.')
-    .invoke('hide')
-    .should('not.be.visible')
-  cy.get('.error')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-    .and('contain', 'Validate the required fields!')
-    .invoke('hide')
-    .should('not.be.visible')
-})
+
 
 })
   

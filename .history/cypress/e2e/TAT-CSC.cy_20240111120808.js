@@ -10,8 +10,6 @@ describe('TAT Customer Service Center', () => {
   })
 
   it('fills in the required fields and submits the form',() => {
-
-    cy.clock()
     const test= Cypress._.repeat('Welcome to the Cypress World! ',10)
     cy.get('#firstName').type('Parvatha')
     cy.get('#lastName').type('Arunkumar')
@@ -32,8 +30,6 @@ describe('TAT Customer Service Center', () => {
 
     //success message is shown after successful submit click
     cy.get('.success').should('be.visible')
-    cy.tick(3000)
-    cy.get('.success').should('not.be.visible')
   })
 
 
@@ -129,8 +125,6 @@ cy.get('#check')
 cy.get('input[type="checkbox"]').last().uncheck()
 .should('not.be.checked')
 })
-
-Cypress._.times(3, () =>{
 it('displays an error message when the phone becomes required but is not filled in before the form submission',()=>{
 
   cy.get('#firstName').type('Parvatha')
@@ -145,9 +139,7 @@ it('displays an error message when the phone becomes required but is not filled 
     .should('be.checked')
   })
 cy.contains('button','Send').click()
-cy.get('.error').should('be.visible') 
-})
-
+cy.get('.error').should('be.visible')
 })
 
 it('Selects a file frm the fixtures folder',() => {
@@ -188,22 +180,7 @@ cy.contains('a','Privacy Policy')
     .should('be.visible')
 })
 
-it.only('displays and hides the success and error messages using .invoke', () => {
-  cy.get('.success')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-    .and('contain', 'Message successfully sent.')
-    .invoke('hide')
-    .should('not.be.visible')
-  cy.get('.error')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-    .and('contain', 'Validate the required fields!')
-    .invoke('hide')
-    .should('not.be.visible')
-})
+
 
 })
   
