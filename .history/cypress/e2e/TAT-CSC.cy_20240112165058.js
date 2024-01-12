@@ -211,7 +211,7 @@ it('fills in the text area field using the invoke command',()=>{
   .should('have.value', 'some text')
 })
 
-it('makes an HTTP request',() =>{
+it.only('makes an HTTP request',() =>{
   cy.request({
     method: 'GET',
     url: 'https://tat-csc.s3.sa-east-1.amazonaws.com/index.html'
