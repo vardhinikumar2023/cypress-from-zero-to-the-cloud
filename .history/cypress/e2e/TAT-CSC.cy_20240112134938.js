@@ -221,13 +221,6 @@ it.only('makes an HTTP request',() =>{
     expect(response.body).to.contains('TAT CSC')
   })
 })
-it.only('finidng cat',() => {
-  cy.get('#cat')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-   
-  
-})
+
 })
   

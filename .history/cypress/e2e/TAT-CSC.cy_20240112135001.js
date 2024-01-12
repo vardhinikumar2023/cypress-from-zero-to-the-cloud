@@ -211,7 +211,7 @@ it('fills in the text area field using the invoke command',()=>{
   .should('have.value', 'some text')
 })
 
-it.only('makes an HTTP request',() =>{
+it('makes an HTTP request',() =>{
   cy.request({
     method: 'GET',
     url: 'https://tat-csc.s3.sa-east-1.amazonaws.com/index.html'
@@ -221,13 +221,6 @@ it.only('makes an HTTP request',() =>{
     expect(response.body).to.contains('TAT CSC')
   })
 })
-it.only('finidng cat',() => {
-  cy.get('#cat')
-    .should('not.be.visible')
-    .invoke('show')
-    .should('be.visible')
-   
-  
-})
+
 })
   

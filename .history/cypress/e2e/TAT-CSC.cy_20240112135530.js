@@ -222,11 +222,13 @@ it.only('makes an HTTP request',() =>{
   })
 })
 it.only('finidng cat',() => {
-  cy.get('#cat')
+  cy.get('.id')
     .should('not.be.visible')
     .invoke('show')
     .should('be.visible')
-   
+    .and('contain', 'cat')
+    .invoke('hide')
+    .should('not.be.visible')
   
 })
 })
